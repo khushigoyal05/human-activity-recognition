@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Mac OS files
+__MACOSX/
+.DS_Store
+
+# Exclude the massive zip file to save space on GitHub (the extracted folder will still be uploaded)
+UCI HAR Dataset.zip

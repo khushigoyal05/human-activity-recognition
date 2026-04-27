@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetics AI | HAR Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <h2>Kinetics <span>AI</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i> Live Predictor</a></li>
+            </ul>
+            <div class="model-info">
+                <p><strong>Active Model:</strong><br>GRU (Gated Recurrent Unit)</p>
+                <p><strong>F1-Weighted:</strong> 92.59%</p>
+                <div class="status online"><div class="dot"></div> API Connected</div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Area -->
+            <header>
+                <div>
+                    <h1>Real-Time Activity Recognition</h1>
+                    <p>Processing 561-feature vectors using Deep Sequence Modeling</p>
+                </div>
+                <div class="controls">
+                    <button id="btn-simulate" class="btn btn-primary">
+                        <i class="fa-solid fa-play"></i> Start Simulation
+                    </button>
+                    <button id="btn-stop" class="btn btn-danger" disabled>
+                        <i class="fa-solid fa-stop"></i> Stop
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="grid-container">
+                <!-- Top Left: Primary Prediction Output -->
+                <div class="glass-panel prediction-panel">
+                    <h3>Current Activity</h3>
+                    <div class="prediction-display">
+                        <div class="activity-icon" id="activity-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="activity-text">
+                            <h2 id="main-prediction">WAITING...</h2>
+                            <div class="confidence-wrapper">
+                                <span>Confidence:</span>
+                                <span id="main-confidence" class="confidence-value">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Right: Probabilities Bar Chart -->
+                <div class="glass-panel probabilities-panel">
+                    <h3>Class Probabilities (Softmax)</h3>
+                    <div class="chart-container">
+                        <canvas id="probChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Bottom: Live Sensor Data Simulation -->
+                <div class="glass-panel sensor-panel">
+                    <div class="panel-header">
+                        <h3>Simulated Sensor Stream (Body Accel X, Y, Z)</h3>
+                        <span class="badge">128 Hz Window</span>
+                    </div>
+                    <div class="chart-container large">
+                        <canvas id="sensorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js for rendering graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

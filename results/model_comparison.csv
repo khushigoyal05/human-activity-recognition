@@ -1,0 +1,9 @@
+Model,Group,Accuracy(%),Precision-W(%),Recall-W(%),F1-W(%),F1-M(%),Train Time
+GRU,Baseline,92.6,92.65,92.6,92.59,92.35,44.9s
+GLU,Gated,92.57,92.61,92.57,92.46,92.21,25.5s
+TCN,Advanced,91.55,91.6,91.55,91.53,91.37,61.0s
+LSTM,Baseline,91.04,91.1,91.04,91.0,90.81,45.1s
+1D-CNN,Baseline,90.94,90.98,90.94,90.8,90.49,19.0s
+Transformer,Advanced,89.92,90.05,89.92,89.87,89.66,44.3s
+BiLSTM,Baseline,89.14,89.25,89.14,89.04,88.74,61.1s
+iTransformer,Advanced-2024,86.7,86.85,86.7,86.48,86.32,80.5s
